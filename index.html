@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saltwind · 绿帆竞速</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="game-root">
+    <div class="grain"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◒</span><div><strong>SALTWIND</strong><small>OPEN WATER / 01</small></div></div>
+      <div class="top-actions"><span class="live-dot"></span><span>LIVE SESSION</span><button id="resetBtn" class="ghost-btn">重置航程</button></div>
+    </header>
+    <main>
+      <section class="hero-copy">
+        <p class="eyebrow">GREEN HORIZON · 绿帆海域</p>
+        <h1>把风，<em>交给海。</em></h1>
+        <p class="lede">驾驶你的绿帆船穿越潮汐，收集沿途航标。<br>跟随风向，让每一次转舵都更接近远方。</p>
+      </section>
+      <div id="viewport-wrap" class="viewport-wrap"><canvas id="scene"></canvas><div class="crosshair"></div><div class="hint">拖动转向 · WASD 加速 / 减速</div></div>
+      <aside class="hud-card">
+        <div class="hud-head"><span>VOYAGE STATUS</span><span id="statusText">UNDERWAY</span></div>
+        <div class="speed-row"><div><span class="label">SPEED</span><strong><span id="speedValue">07</span><small> kn</small></strong></div><div class="compass"><span class="north">N</span><div class="compass-ring"><i id="compassNeedle"></i></div><span class="course">COURSE <b id="courseValue">072°</b></span></div></div>
+        <div class="meter"><div class="meter-label"><span>WIND POWER</span><span id="windValue">68%</span></div><div class="meter-track"><div id="windBar" class="meter-fill"></div></div></div>
+        <div class="meter"><div class="meter-label"><span>WAYPOINTS</span><span><b id="waypointValue">0</b> / 5</span></div><div class="meter-track"><div id="waypointBar" class="meter-fill lime"></div></div></div>
+        <div class="controls"><span><kbd>W</kbd><kbd>S</kbd> 速度</span><span><kbd>A</kbd><kbd>D</kbd> 转向</span><span><kbd>SPACE</kbd> 稳帆</span></div>
+      </aside>
+      <div class="footer-note"><span>LAT 37° 48' 12" N</span><span>LONG 122° 25' 09" W</span><span>WIND SW 14 KT</span></div>
+    </main>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
+
